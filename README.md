@@ -7,7 +7,9 @@ Takes URLs on stdin and a regex as an argument, returns URLs to pages where a ma
   -p Regex (The syntax of the regular expressions accepted is the same general syntax used by Perl, Python, and other languages.)
   
   -r Match anything other than the supplied pattern
-  
+# installation
+> go get -u github.com/raverrr/onpage
+
 # use cases
 -Find known vulnerable code:
 >  cat urls.txt | onpage -p '(VulnerableFunctionName|VulnerableLib.*\\.js)'
