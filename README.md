@@ -15,6 +15,8 @@ Takes URLs on stdin and a regex as an argument, returns URLs to pages where a ma
 -Find parameter reflections:
 >  cat urls.txt |qsreplace zzzz1 | onpage -p 'zzzz1'
   
+-Anything else you might want to check a bunch of pages for:
+>  secrets, protection mechanisms or lack of, really anthing you might want to probe a bunch of pages for
   
   
   
