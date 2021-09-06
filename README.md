@@ -9,11 +9,11 @@ Takes URLs on stdin and a regex as an argument, returns URLs to pages where a ma
   -r Match anything other than the supplied pattern
   
 # use cases
-  -Find known vulnerable code:
-             cat urls.txt | onpage -p '(VulnerableFunctionName|VulnerableLib.*\\.js)'
+-Find known vulnerable code:
+>  cat urls.txt | onpage -p '(VulnerableFunctionName|VulnerableLib.*\\.js)'
   
-  -Find parameter reflections:
-             cat urls.txt |qsreplace zzzz1 | onpage -p 'zzzz1'
+-Find parameter reflections:
+>  cat urls.txt |qsreplace zzzz1 | onpage -p 'zzzz1'
   
   
   
