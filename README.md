@@ -10,10 +10,10 @@ Takes URLs on stdin and a regex as an argument, returns URLs to pages where a ma
   
 # use cases
   -Find known vulnerable code:
-  cat urls.txt | onpage -p '(VulnerableFunctionName|VulnerableLib.*\\.js)'
+             cat urls.txt | onpage -p '(VulnerableFunctionName|VulnerableLib.*\\.js)'
   
   -Find parameter reflections:
-  cat urls.txt |qsreplace zzzz1 | onpage -p 'zzzz1'
+             cat urls.txt |qsreplace zzzz1 | onpage -p 'zzzz1'
   
   
   
