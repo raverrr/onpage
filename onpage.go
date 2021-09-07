@@ -27,7 +27,7 @@ func main() {
 
 	var concurrency int
 	flag.BoolVar(&reverse, "r", false, "Match anything other than the supplied pattern")
-	flag.IntVar(&concurrency, "c", 50, "Concurrency")
+	flag.IntVar(&concurrency, "c", 20, "Concurrency")
 	flag.StringVar(&pattern, "p", "", " Regex (The syntax of the regular expressions accepted is the same general syntax used by Perl, Python, and other languages.)")
 	flag.Parse()
 
