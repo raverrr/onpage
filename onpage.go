@@ -62,21 +62,21 @@ func main() {
 
 	semaphore := make(chan bool, concurrency)
 
-	for sc.Scan() {
-		raw := sc.Text()
-		wg.Add(1)
-		semaphore <- true
-		go func(raw string) {
-			defer wg.Done()
-			u, err := url.ParseRequestURI(raw)
-			if err != nil {
-				return
-			}
-			fetchURL(u)
+for sc.Scan() {
+	raw := sc.Text()
+	wg.Add(1)
+	semaphore <- true
+	go func(raw string) {
+		defer wg.Done()
+		defer func() { <-semaphore }()
+		u, err := url.ParseRequestURI(raw)
+		if err != nil {
+			return
+		}
+		fetchURL(u)
 
-		}(raw)
-		<-semaphore
-	}
+	}(raw)
+}
 
 	wg.Wait()
 
